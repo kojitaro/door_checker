@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # coding: UTF-8
 
 from serial import *
@@ -19,9 +19,9 @@ def main(port):
 # シリアルポートを開く
     try:
         ser = Serial(port, 115200)
-        print "open serial port: %s" % port
+        print("open serial port: %s" % port)
     except:
-        print "cannot open serial port: %s" % port
+        print("cannot open serial port: %s" % port)
         exit(1)
 
     while True:
