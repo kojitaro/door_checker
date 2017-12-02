@@ -1,7 +1,8 @@
 import binascii
 import struct
 
-recvfmt = struct.Struct("<BBBBBIBHBHBBBBBBBBB")
+recvfmt = struct.Struct(">BBBBBIBHBHBBBBBBBBB")
+#recvfmt = struct.Struct("<BBBBBIBHBHBBBBBBBBB")
 
 def parse_readdata(line):
     data = recvfmt.unpack(binascii.a2b_hex(line))

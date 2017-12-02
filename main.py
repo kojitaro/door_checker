@@ -12,7 +12,15 @@ def parse(line):
     
     line = line[1:]
     data = twelite.parse_readdata(line)
-    print(data)
+    #print(data)
+
+    door = {
+        "lock": 1 if data["ai"][0] >= 65 else 0,
+        "open": data["di"][0],
+        "lqi": data["lqi"],
+        "voltage": data["voltage"],
+    }
+    print(door)
 
 
 def main(port):
